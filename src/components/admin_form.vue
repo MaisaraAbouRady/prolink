@@ -6,25 +6,40 @@
       <label for="make">Make</label>
       <input type="text" id="make" v-model="form.make" />
 
+      <br /><br />
+
       <label for="model"Model</label>
       <input type="text" id="model" v-model="form.model" />
+
+      <br /><br />
 
       <label for="Category">Category</label>
       <input type="text" id="category" v-model="form.category" />
 
+      <br /><br />
+
       <label for="subcategory">Subcategory</label>
       <input type="text" id="subcategory" v-model="form.subcategory" />
+
+      <br /><br />
 
       <label for="thumbnail">Photo</label>
       <input type="image" id="thumbnail" v-model="form.thumbnail" />
 
+      <br /><br />
+
       <label for="stock_availability">Available in stock?</label>
       <input type="radio" name="yes" id="stock_availability" value="yes" v-model="form.stock_availability" />
+      <input type="radio" name="no" id="stock_availability" value="no" v-model="form.stock_availability" />
+
+      <br /><br />
 
       <label for="description">Product Description</label>
       <textarea id="description" v-model="form.description"></textarea>
 
-      <button type="submit"></button>
+      <br /><br />
+
+      <button type="submit">Submit</button>
   
     </form>
   </div>
