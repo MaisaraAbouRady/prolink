@@ -24,7 +24,7 @@
       <br /><br />
 
       <label for="thumbnail">Photo</label>
-      <input type="image" id="thumbnail" v-model="form.thumbnail" />
+      <input type="file" id="thumbnail" v-on:change="upload" ref="thumbnail_uploader"/>
 
       <br /><br />
 
@@ -77,7 +77,11 @@ export default {
     },
 
     sendFormData() {
-      axios.post(Vue.config.formApiUrl, this.form)
+      axios.post(Vue.config.formApiUrl, this.form);
+    },
+
+    upload() {
+      this.thumbnail = this.$refs.thumbnail_uploader.value;
     }
 
   }
