@@ -12,8 +12,7 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.11",
-    "vuex": "^3.0.1",
-    "vuex-cli-scaffold": "^1.0.8"
+    "vuex": "^3.0.1"
   },
   "browserslist": [
     "> 1%",
