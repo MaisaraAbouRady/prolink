@@ -15,6 +15,7 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "firebase": "^5.5.6",
     "jquery": "^3.3.1",
+    "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0",
     "set-default-browser": "^1.0.1",
     "vue": "^2.5.11",
