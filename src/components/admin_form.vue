@@ -1,72 +1,136 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
-    <form>
+    
+    <h3 style="letter-spacing: 5px">Add Products</h3>
 
-      <label for="make">Make</label>
-      <input type="text" id="make" v-model="form.make" />
+    <br/><br/>
 
-      <br /><br />
+    <div class="container">
 
-      <div class="form-group">
+	    <form>
 
-      	<label for="model">Model</label>
-      	<input type="text" id="model" v-model="form.model" class=".form-control" />
+	    	<div class="form-group row justify-content-center">
 
-      </div>
+		    	<div class="col-xs-2" style="padding: 0px 10px 0px 10px;">
 
-      <br /><br />
+		    		<div class="inner">
 
-      <div class="form-group">
+		      			<label for="make">Make</label>
+		      			<input type="text" id="make" v-model="form.make" class="form-control" />
 
-      	<label for="Category">Category</label>
-      	<input type="text" id="category" v-model="form.category" class="form-control" />
+		      		</div>
 
-      </div>
+				</div>
 
-      <br /><br />
+	      		<div class="col-xs-2" style="padding: 0px 10px 0px 10px;">
 
-      <div class="form-group">
+		    		<div class="inner">
 
-      	<label for="subcategory">Subcategory</label>
-      	<input type="text" id="subcategory" v-model="form.subcategory" class="form-control" />
+	      				<label for="model">Model</label>
+	      				<input type="text" id="model" v-model="form.model" class="form-control" />
 
-      </div>
+	      			</div>
 
-      <br /><br />
+	     		</div>
 
-      <div class="form-group">
+			</div>
 
-      	<label for="thumbnail">Photo</label>
-      	<input type="file" id="thumbnail" v-on:change="upload" ref="thumbnail_uploader" class="form-control"/>
+	    	<div class="form-group row justify-content-center">		
 
-      </div>
+				<div class="col-xs-2" style="padding: 0px 10px 0px 10px;">
 
-      <br /><br />
+					<div class="inner">
 
-      <div class="form-group">
+						<label for="Category">Category</label>
+						<input type="text" id="category" v-model="form.category" class="form-control" />
 
-      	<label for="stock_availability">Available in stock?</label>
-      	<input type="radio" name="yes" id="stock_availability" value="yes" v-model="form.stock_availability" class="form-control" />
-      	<input type="radio" name="no" id="stock_availability" value="no" v-model="form.stock_availability" class="form-control" />
+					</div>
+				
+				</div>
 
-      </div>
+				<div class="col-xs-2" style="padding: 0px 10px 0px 10px;">
 
-      <br /><br />
+					<div class="inner">
 
-      <div class="form-group">
+						<label for="subcategory">Subcategory</label>
+						<input type="text" id="subcategory" v-model="form.subcategory" class="form-control" />
 
-      	<label for="description">Product Description</label>
-      	<textarea id="description" v-model="form.description" class="form-control"></textarea>
+					</div>
 
-      </div>
+				</div>
 
-      <br /><br />
+			</div>
 
-      <button type="submit" class="form-control">Submit</button>
-  
-    </form>
+	    	<div class="form-group row justify-content-center">
+
+				<div class="col-5">
+
+					<label for="thumbnail">Photo</label>
+					<input type="file" id="thumbnail" v-on:change="upload" ref="thumbnail_uploader" class="form-control"/>
+
+				</div>
+
+			</div>
+
+	    	<div class="form-group row justify-content-center">
+
+				<div class="col-6">
+
+					<div class="row justify-content-center">
+
+						<h5 style="padding: 20px;"><i>Available in stock?</i></h5>
+
+					</div>
+
+					<div class="row justify-content-center">
+
+						<div class="col-3">
+							
+							<label for="stock_availability_yes">Yes</label>
+							<input type="radio" id="stock_availability_yes" name="stock_availability" value="yes" v-model="form.stock_availability" class="form-control" /> 
+					
+						</div>
+
+						<div class="col-3">
+					
+							<label for="stock_availability_no">No</label>
+							<input type="radio" id="stock_availability_no" name="stock_availability" value="No" v-model="form.stock_availability" class="form-control" />
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+	    	<div class="form-group row justify-content-center" style="padding-top: 20px;">
+
+				<div class="col-5">
+
+					<label for="description">Product Description</label>
+					<textarea id="description" v-model="form.description" class="form-control"></textarea>
+
+				</div>
+
+			</div>
+
+	    	<div class="form-group row justify-content-center">		
+
+	    		<div class="col-3">
+
+					<button type="submit" class="form-control col-xs-2">Submit</button>
+
+				</div>
+
+			</div>
+
+		</form>
+
+	</div>
+
   </div>
+
 </template>
 
 <script>

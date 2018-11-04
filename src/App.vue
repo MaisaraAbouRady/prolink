@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
+    <img src="./assets/logo.png" style="width: 200px; height: auto;">
     <admin_form></admin_form>
   </div>
 </template>
