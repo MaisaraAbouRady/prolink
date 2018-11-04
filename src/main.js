@@ -2,7 +2,11 @@ import Vue from 'vue'
 import VueFire from 'vuefire'
 import App from './App.vue'
 
-require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss')
+/*Bootstrap Dependencies*/
+
+import './../node_modules/jquery/dist/jquery.min.js';
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 new Vue({
   el: '#app',
