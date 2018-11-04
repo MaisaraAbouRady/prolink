@@ -8,38 +8,62 @@
 
       <br /><br />
 
-      <label for="model"Model</label>
-      <input type="text" id="model" v-model="form.model" />
+      <div class="form-group">
+
+      	<label for="model">Model</label>
+      	<input type="text" id="model" v-model="form.model" class=".form-control" />
+
+      </div>
 
       <br /><br />
 
-      <label for="Category">Category</label>
-      <input type="text" id="category" v-model="form.category" />
+      <div class="form-group">
+
+      	<label for="Category">Category</label>
+      	<input type="text" id="category" v-model="form.category" class="form-control" />
+
+      </div>
 
       <br /><br />
 
-      <label for="subcategory">Subcategory</label>
-      <input type="text" id="subcategory" v-model="form.subcategory" />
+      <div class="form-group">
+
+      	<label for="subcategory">Subcategory</label>
+      	<input type="text" id="subcategory" v-model="form.subcategory" class="form-control" />
+
+      </div>
 
       <br /><br />
 
-      <label for="thumbnail">Photo</label>
-      <input type="file" id="thumbnail" v-on:change="upload" ref="thumbnail_uploader"/>
+      <div class="form-group">
+
+      	<label for="thumbnail">Photo</label>
+      	<input type="file" id="thumbnail" v-on:change="upload" ref="thumbnail_uploader" class="form-control"/>
+
+      </div>
 
       <br /><br />
 
-      <label for="stock_availability">Available in stock?</label>
-      <input type="radio" name="yes" id="stock_availability" value="yes" v-model="form.stock_availability" />
-      <input type="radio" name="no" id="stock_availability" value="no" v-model="form.stock_availability" />
+      <div class="form-group">
+
+      	<label for="stock_availability">Available in stock?</label>
+      	<input type="radio" name="yes" id="stock_availability" value="yes" v-model="form.stock_availability" class="form-control" />
+      	<input type="radio" name="no" id="stock_availability" value="no" v-model="form.stock_availability" class="form-control" />
+
+      </div>
 
       <br /><br />
 
-      <label for="description">Product Description</label>
-      <textarea id="description" v-model="form.description"></textarea>
+      <div class="form-group">
+
+      	<label for="description">Product Description</label>
+      	<textarea id="description" v-model="form.description" class="form-control"></textarea>
+
+      </div>
 
       <br /><br />
 
-      <button type="submit">Submit</button>
+      <button type="submit" class="form-control">Submit</button>
   
     </form>
   </div>
