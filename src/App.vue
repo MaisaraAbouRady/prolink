@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png" style="width: 200px; height: auto;">
-    <admin_form></admin_form>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 
 import AdminForm from './components/admin_form.vue'
+import AdminLogin from './components/admin_login.vue'
 
 export default {
   name: 'app',
@@ -19,7 +20,8 @@ export default {
 
   components: {
 
-    admin_form: AdminForm
+    admin_form: AdminForm,
+    admin_login: AdminLogin
 
   }
 }

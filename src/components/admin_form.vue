@@ -119,7 +119,7 @@
 
 	    		<div class="col-3">
 
-					<button type="submit" class="form-control col-xs-2">Submit</button>
+					<button type="submit" v-on:click="submit" class="form-control col-xs-2">Submit</button>
 
 				</div>
 
@@ -139,7 +139,7 @@ import axios from 'axios';
 import Vue from 'vue';
 
 export default {
-  name: 'app',
+  name: 'AdminForm',
   data () {
     return {
       msg: 'Test Form',
@@ -160,8 +160,16 @@ export default {
 
   methods: {
 
-    submit() {
-      this.sendFormData();
+    submit: function() {
+    	firebase.auth().signInWithEmailAndPassword('dummy1@prolink.us.com', 'qwertyuio').then(
+    		function(){
+    			this.sendFormData();
+    			alert("Successful!");
+    		},
+    		function(){
+    			alert("Error!");
+    		}
+    	)
     },
 
     sendFormData() {
