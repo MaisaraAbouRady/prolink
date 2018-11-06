@@ -3,7 +3,7 @@
 
 import firebase from 'firebase'
 
-export default config = {
+const config = {
   apiKey: "AIzaSyBC3_nWM71EzSvVw2q5YOnEWuhN9xz2-JI",
   authDomain: "prolink-products.firebaseapp.com",
   databaseURL: "https://prolink-products.firebaseio.com",

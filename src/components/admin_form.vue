@@ -138,19 +138,6 @@
 import Vue from 'vue';
 import firebase from 'firebase';
 
-//The firebase object that is going to be written to with the push(object) method.
-
-const config = {
-  apiKey: "AIzaSyBC3_nWM71EzSvVw2q5YOnEWuhN9xz2-JI",
-  authDomain: "prolink-products.firebaseapp.com",
-  databaseURL: "https://prolink-products.firebaseio.com",
-  projectId: "prolink-products",
-  storageBucket: "",
-  messagingSenderId: "1055612346187"
-};
-
-firebase.initializeApp(config);
-
 var productsRef = firebase.database().ref();
 
 export default {

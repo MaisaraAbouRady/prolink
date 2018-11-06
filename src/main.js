@@ -4,9 +4,13 @@ import firebase from 'firebase'
 
 //Firebase Configuration - Must happen before invoking firebase in any component.
 
-//const fb = require('./fbConfig.js');
+import FBConfig from './fbConfig.js'
 
 //FOR A WEIRD REASON FOR NOW, THE CONFIGURATION IS DONE IN THE ADMIN-FORM FILE. LATER ON I WILL TAKE IT TO A SEPERATE FILE THAT RUNS BEFORE ANYTHING
+
+//The firebase object that is going to be written to with the push(object) method.
+
+
 
 //Components invoke firebase
 
