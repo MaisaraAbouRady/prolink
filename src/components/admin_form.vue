@@ -135,14 +135,31 @@
 
 <script>
 
-import axios from 'axios';
 import Vue from 'vue';
+import firebase from 'firebase';
+
+//The firebase object that is going to be written to with the push(object) method.
+
+const config = {
+  apiKey: "AIzaSyBC3_nWM71EzSvVw2q5YOnEWuhN9xz2-JI",
+  authDomain: "prolink-products.firebaseapp.com",
+  databaseURL: "https://prolink-products.firebaseio.com",
+  projectId: "prolink-products",
+  storageBucket: "",
+  messagingSenderId: "1055612346187"
+};
+
+firebase.initializeApp(config);
+
+var productsRef = firebase.database().ref();
 
 export default {
   name: 'AdminForm',
   data () {
     return {
-      msg: 'Test Form',
+      
+      //Form data holder. Will be pushed to the DB.
+
       form: {
 
         category: '',
@@ -161,19 +178,41 @@ export default {
   methods: {
 
     submit: function() {
-    	firebase.auth().signInWithEmailAndPassword('dummy1@prolink.us.com', 'qwertyuio').then(
-    		function(){
-    			this.sendFormData();
-    			alert("Successful!");
-    		},
-    		function(){
-    			alert("Error!");
-    		}
-    	)
-    },
 
-    sendFormData() {
-      axios.post(Vue.config.formApiUrl, this.form);
+    	var vm = this;
+    	firebase.auth().signInWithEmailAndPassword("dummy1@prolink.us.com", "qwertyuio").then(
+    		function(firebaseUser){
+    			
+    			//Push to the DB
+
+    			productsRef.push(vm.form);
+
+    			//Reset the DB data holder
+
+    			vm.form.category = '';
+    			vm.form.subcategory = '';
+    			vm.form.time_stamp = '';
+    			vm.form.make = '';
+    			vm.form.model = '';
+    			vm.form.thumbnail = '';
+    			vm.form.stock_availability = '';
+    			vm.form.description = '';  			
+
+    			alert("Successful!");
+
+    		}).catch(function(error) {
+            
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            if (errorCode === 'auth/wrong-password') {
+              alert('Wrong password.');
+            } else {
+              alert(errorMessage);         
+            }
+
+            console.log(error);
+        });
     },
 
     upload() {
